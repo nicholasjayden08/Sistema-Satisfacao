@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4758ab08-2ef4-4d34-a8d9-2de74114678a" name="Changes" comment="feat: add Dockerfile for Spring Boot backend deployment">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="4758ab08-2ef4-4d34-a8d9-2de74114678a" name="Changes" comment="fix: update Docker image to Java 26">
+      <change beforePath="$PROJECT_DIR$/backend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +97,23 @@
       <option name="project" value="LOCAL" />
       <updated>1785421337568</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fix: use Maven installation in Docker build">
+      <option name="closed" value="true" />
+      <created>1785421713381</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1785421713381</updated>
+    </task>
+    <task id="LOCAL-00005" summary="fix: update Docker image to Java 26">
+      <option name="closed" value="true" />
+      <created>1785421879012</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1785421879013</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,6 +122,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init commit" />
     <MESSAGE value="feat: add Dockerfile for Spring Boot backend deployment" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add Dockerfile for Spring Boot backend deployment" />
+    <MESSAGE value="fix: use Maven installation in Docker build" />
+    <MESSAGE value="fix: update Docker image to Java 26" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: update Docker image to Java 26" />
   </component>
 </project>
