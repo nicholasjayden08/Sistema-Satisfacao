@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Padá Padoca — Sua opinião</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet"><style>
+  :root{
+    --wine-900:#2E1214;
+    --wine-700:#4A2224;
+    --wine-500:#6B3A3D;
+    --cream-100:#FCF8F4;
+    --cream-200:#F3E9DA;
+    --gold:#C9A15B;
+    --ink:#2B1912;
+    --ink-soft:#6B5850;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--cream-100);
+    font-family:'Poppins', sans-serif;
+    color:var(--ink);
+    display:flex;
+    justify-content:center;
+  }
+  .screen{
+    width:100%;
+    max-width:420px;
+    min-height:100vh;
+    background:var(--cream-100);
+    position:relative;
+  }
+
+  /* Header */
+  header{
+    background:var(--wine-700);
+    padding:3.25rem 1.5rem 2.5rem;
+    text-align:center;
+    position:relative;
+  }
+  header .wordmark{
+    font-family:'Bodoni Moda', serif;
+    font-style:normal;
+    font-weight:600;
+    font-size:2.5rem;
+    color:var(--cream-200);
+    margin:0;
+    letter-spacing:0.01em;
+  }
+  header .tag{
+    font-size:0.78rem;
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:0.14em;
+    margin:0.4rem 0 0;
+  }
+  /* scalloped crust edge, signature element */
+  .crust{
+    display:block;
+    width:100%;
+    height:16px;
+    margin-top:-1px;
+  }
+  .crust path{ fill:var(--cream-100); }
+
+  main{
+    padding:2.25rem 1.75rem 3rem;
+  }
+
+  h2.question{
+    font-family:'Bodoni Moda', serif;
+    font-weight:600;
+    font-size:1.3rem;
+    text-align:left;
+    margin:0 0 1rem;
+    line-height:1.35;
+  }
+
+  .stars{
+    display:flex;
+    justify-content:flex-start;
+    gap:0.4rem;
+    margin-bottom:0.25rem;
+  }
+  .stars button{
+    background:none;
+    border:none;
+    cursor:pointer;
+    padding:0.1rem;
+    line-height:0;
+    transition:transform 0.15s ease;
+  }
+  .stars button:active{ transform:scale(0.88); }
+  .stars button svg{
+    width:26px;
+    height:26px;
+    stroke:var(--wine-700);
+    stroke-width:1.6px;
+    fill:none;
+  }
+  .stars.big button svg{
+    width:34px;
+    height:34px;
+  }
+  .stars button.filled svg{
+    fill:var(--wine-700);
+  }
+
+  .category-block{
+    padding:1.15rem 0;
+  }
+  .category-block .label{
+    display:block;
+    font-size:1.05rem;
+    font-weight:600;
+    color:var(--ink);
+    margin-bottom:0.6rem;
+  }
+
+  .card{
+    margin:0.5rem 0 1.75rem;
+  }
+
+  .field{ margin-bottom:1.4rem; }
+  .field label{
+    display:block;
+    font-size:0.92rem;
+    font-weight:500;
+    color:var(--ink-soft);
+    margin-bottom:0.5rem;
+  }
+  .field textarea, .field input{
+    width:100%;
+    border:1.5px solid #E4D8C6;
+    border-radius:10px;
+    padding:0.85rem 0.95rem;
+    font-family:inherit;
+    font-size:1rem;
+    color:var(--ink);
+    background:#fff;
+    resize:none;
+  }
+  .field textarea:focus, .field input:focus{
+    outline:none;
+    border-color:var(--wine-500);
+  }
+  .field textarea{ height:100px; }
+
+  .submit-btn{
+    width:100%;
+    background:var(--wine-700);
+    color:var(--cream-200);
+    border:none;
+    border-radius:10px;
+    padding:1.1rem;
+    font-family:'Work Sans', sans-serif;
+    font-weight:600;
+    font-size:0.9rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    cursor:pointer;
+    transition:background 0.15s ease;
+  }
+  .submit-btn:hover{ background:var(--wine-900); }
+  .submit-btn:disabled{ opacity:0.4; cursor:not-allowed; }
+
+  .hint{
+    text-align:center;
+    font-size:0.78rem;
+    color:var(--ink-soft);
+    margin-top:0.9rem;
+  }
+
+  /* Thank you screen */
+  .thanks{
+    display:none;
+    padding:3rem 1.75rem;
+    text-align:center;
+  }
+  .thanks.visible{ display:block; }
+  main.hidden{ display:none; }
+  .thanks .big-stars{
+    font-size:2.2rem;
+    color:var(--gold);
+    letter-spacing:0.15rem;
+    margin-bottom:1rem;
+  }
+  .thanks h3{
+    font-family:'Bodoni Moda', serif;
+    font-weight:500;
+    font-size:1.4rem;
+    margin:0 0 0.75rem;
+  }
+  .thanks p{
+    font-size:0.95rem;
+    color:var(--ink-soft);
+    line-height:1.6;
+    margin:0 0 1.75rem;
+  }
+  .google-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:0.4rem;
+    background:var(--wine-700);
+    color:var(--cream-200);
+    text-decoration:none;
+    font-weight:600;
+    font-size:0.82rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    padding:0.85rem 1.75rem;
+    border-radius:10px;
+  }
+  .google-box{
+    background:var(--cream-200);
+    border-radius:var(--radius);
+    padding:1.25rem;
+    margin-bottom:1.5rem;
+  }
+  .google-box p{ margin:0 0 1rem; }
+
+  /* Loading screen */
+  .loading{
+    display:none;
+    padding:4rem 1.75rem;
+    text-align:center;
+  }
+  .loading.visible{ display:block; }
+  .loading .icon-circle{
+    width:88px; height:88px;
+    border-radius:50%;
+    border:1.5px solid var(--wine-700);
+    display:flex; align-items:center; justify-content:center;
+    margin:0 auto 1.75rem;
+  }
+  .loading p{ margin:0.25rem 0; color:var(--ink); font-size:0.98rem; }
+  .loading .dots{
+    margin-top:1.25rem;
+    display:flex; justify-content:center; gap:6px;
+  }
+  .loading .dots span{
+    width:6px; height:6px; border-radius:50%;
+    background:var(--wine-500);
+    opacity:0.35;
+    animation:pulse 1.2s infinite ease-in-out;
+  }
+  .loading .dots span:nth-child(2){ animation-delay:0.15s; }
+  .loading .dots span:nth-child(3){ animation-delay:0.3s; }
+  @keyframes pulse{
+    0%,80%,100%{ opacity:0.35; }
+    40%{ opacity:1; }
+  }
+
+  .mascot{ margin:0 auto 1rem; display:block; }
+  .bread-deco{ position:absolute; bottom:0; right:0; opacity:0.9; }
+</style>
+</head>
+<body>
+<div class="screen">
+
+  <header>
+    <p class="wordmark">padá padoca</p>
+  </header>
+
+  <main id="surveyMain">
+    <h2 class="question">Como foi sua experiência hoje?</h2>
+    <div class="stars big" data-group="geral" aria-label="Nota geral">
+      <button type="button" data-value="1"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.95 6.28 6.85.83-5.1 4.72 1.42 6.87L12 17.6l-6.12 3.6 1.42-6.87-5.1-4.72 6.85-.83z"/></svg></button>
+      <button type="button" data-value="2"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.95 6.28 6.85.83-5.1 4.72 1.42 6.87L12 17.6l-6.12 3.6 1.42-6.87-5.1-4.72 6.85-.83z"/></svg></button>
+      <button type="button" data-value="3"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.95 6.28 6.85.83-5.1 4.72 1.42 6.87L12 17.6l-6.12 3.6 1.42-6.87-5.1-4.72 6.85-.83z"/></svg></button>
+      <button type="button" data-value="4"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.95 6.28 6.85.83-5.1 4.72 1.42 6.87L12 17.6l-6.12 3.6 1.42-6.87-5.1-4.72 6.85-.83z"/></svg></button>
+      <button type="button" data-value="5"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.95 6.28 6.85.83-5.1 4.72 1.42 6.87L12 17.6l-6.12 3.6 1.42-6.87-5.1-4.72 6.85-.83z"/></svg></button>
+    </div>
+
+    <div class="card">
+      <div class="category-block">
+        <span class="label">Atendimento</span>
+        <div class="stars" data-group="atendimento">
+          <button type="button" data-value="1"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.95 6.28 6.85.83-5.1 4.72 1.42 6.87L12 17.6l-6.12 3.6 1.42-6.87-5.1-4.72 6.85-.83z"/></svg></button>
+          <button type="button" data-value="2"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.95 6.28 6.85.83-5.1 4.72 1.42 6.87L12 17.6l-6.12 3.6 1.42-6.87-5.1-4.72 6.85-.83z"/></svg></button>
+          <button type="button" data-value="3"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.95 6.28 6.85.83-5.1 4.72 1.42 6.87L12 17.6l-6.12 3.6 1.42-6.87-5.1-4.72 6.85-.83z"/></svg></button>
+          <button type="button" data-value="4"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.95 6.28 6.85.83-5.1 4.72 1.42 6.87L12 17.6l-6.12 3.6 1.42-6.87-5.1-4.72 6.85-.83z"/></svg></button>
+          <button type="button" data-value="5"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.95 6.28 6.85.83-5.1 4.72 1.42 6.87L12 17.6l-6.12 3.6 1.42-6.87-5.1-4.72 6.85-.83z"/></svg></button>
+        </div>
+      </div>
+      <div class="category-block">
+        <span class="label">Produtos</span>
+        <div class="stars" data-group="produtos">
+          <button type="button" data-value="1"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.95 6.28 6.85.83-5.1 4.72 1.42 6.87L12 17.6l-6.12 3.6 1.42-6.87-5.1-4.72 6.85-.83z"/></svg></button>
+          <button type="button" data-value="2"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.95 6.28 6.85.83-5.1 4.72 1.42 6.87L12 17.6l-6.12 3.6 1.42-6.87-5.1-4.72 6.85-.83z"/></svg></button>
+          <button type="button" data-value="3"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.95 6.28 6.85.83-5.1 4.72 1.42 6.87L12 17.6l-6.12 3.6 1.42-6.87-5.1-4.72 6.85-.83z"/></svg></button>
+          <button type="button" data-value="4"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.95 6.28 6.85.83-5.1 4.72 1.42 6.87L12 17.6l-6.12 3.6 1.42-6.87-5.1-4.72 6.85-.83z"/></svg></button>
+          <button type="button" data-value="5"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.95 6.28 6.85.83-5.1 4.72 1.42 6.87L12 17.6l-6.12 3.6 1.42-6.87-5.1-4.72 6.85-.83z"/></svg></button>
+        </div>
+      </div>
+      <div class="category-block">
+        <span class="label">Ambiente</span>
+        <div class="stars" data-group="ambiente">
+          <button type="button" data-value="1"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.95 6.28 6.85.83-5.1 4.72 1.42 6.87L12 17.6l-6.12 3.6 1.42-6.87-5.1-4.72 6.85-.83z"/></svg></button>
+          <button type="button" data-value="2"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.95 6.28 6.85.83-5.1 4.72 1.42 6.87L12 17.6l-6.12 3.6 1.42-6.87-5.1-4.72 6.85-.83z"/></svg></button>
+          <button type="button" data-value="3"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.95 6.28 6.85.83-5.1 4.72 1.42 6.87L12 17.6l-6.12 3.6 1.42-6.87-5.1-4.72 6.85-.83z"/></svg></button>
+          <button type="button" data-value="4"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.95 6.28 6.85.83-5.1 4.72 1.42 6.87L12 17.6l-6.12 3.6 1.42-6.87-5.1-4.72 6.85-.83z"/></svg></button>
+          <button type="button" data-value="5"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.95 6.28 6.85.83-5.1 4.72 1.42 6.87L12 17.6l-6.12 3.6 1.42-6.87-5.1-4.72 6.85-.83z"/></svg></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="comentario">Conte como foi sua experiência</label>
+      <textarea id="comentario" placeholder="O pão de queijo estava quentinho..."></textarea>
+    </div>
+    <div class="field">
+      <label for="nome">Seu nome (opcional)</label>
+      <input id="nome" type="text" placeholder="Maria Silva">
+    </div>
+
+    <button class="submit-btn" id="submitBtn" disabled>Enviar avaliação</button>
+    <p class="hint">Dê pelo menos a nota geral para enviar.</p>
+  </main>
+
+  <section class="loading" id="loadingScreen">
+    <div class="icon-circle">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#5B2A38" stroke-width="1.6">
+        <path d="M22 2 11 13" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M22 2 15 22l-4-9-9-4 20-7Z" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <p>Enviando sua avaliação...</p>
+    <p>Obrigado!</p>
+    <div class="dots"><span></span><span></span><span></span></div>
+  </section>
+
+  <section class="thanks" id="thanksScreen">
+    <div id="thanksHigh">
+      <svg class="mascot" width="72" height="72" viewBox="0 0 100 100" fill="none">
+        <path d="M50 12 L59 38 L86 38 L64 54 L72 80 L50 64 L28 80 L36 54 L14 38 L41 38 Z" fill="#EAC77A" stroke="#5B2A38" stroke-width="2" stroke-linejoin="round"/>
+        <circle cx="43" cy="47" r="2.4" fill="#5B2A38"/>
+        <circle cx="58" cy="47" r="2.4" fill="#5B2A38"/>
+        <path d="M43 55 Q50 60 58 55" stroke="#5B2A38" stroke-width="2" stroke-linecap="round" fill="none"/>
+        <path d="M14 16 l3 3M84 12 l-3 3M20 68 l-3 3" stroke="#C9A15B" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <div class="big-stars">★★★★★</div>
+      <h3>Obrigado pela sua avaliação!</h3>
+      <p>Sua opinião é muito importante para nós.</p>
+      <div class="google-box">
+        <p>Ajude outras pessoas a conhecerem a Padá Padoca.</p>
+        <a href="#" class="google-btn" id="googleBtn" target="_blank" rel="noopener">
+          Avaliar no Google
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 3h6v6M10 14 21 3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+    <div id="thanksLow" style="display:none; position:relative;">
+      <svg width="60" height="60" viewBox="0 0 100 100" fill="none" style="margin:0 auto 1rem; display:block;">
+        <circle cx="50" cy="50" r="48" fill="#F3E9DA"/>
+        <path d="M50 68 C30 54 22 42 22 32 C22 22 30 16 38 18 C44 19.5 50 26 50 26 C50 26 56 19.5 62 18 C70 16 78 22 78 32 C78 42 70 54 50 68 Z" fill="#5B2A38"/>
+      </svg>
+      <h3>Obrigado!</h3>
+      <p>Recebemos sua avaliação e vamos utilizá-la para melhorar cada vez mais.</p>
+      <svg class="bread-deco" width="140" height="110" viewBox="0 0 140 110" fill="none" stroke="#5B2A38" stroke-width="1.4">
+        <ellipse cx="55" cy="80" rx="38" ry="20" fill="#F3E9DA" stroke="#5B2A38"/>
+        <path d="M30 72 Q55 55 80 72" stroke-linecap="round"/>
+        <ellipse cx="100" cy="88" rx="26" ry="14" fill="#EAC77A" opacity="0.5" stroke="#5B2A38"/>
+        <path d="M15 40 Q20 20 10 5" stroke-linecap="round"/>
+        <path d="M25 45 Q35 28 28 10" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  // TODO: trocar pelo link real do Google Reviews da padaria
+  document.getElementById('googleBtn').href = 'https://g.page/r/SEU_ID_AQUI/review';
+
+  const ratings = { geral: 0, atendimento: 0, produtos: 0, ambiente: 0 };
+  const submitBtn = document.getElementById('submitBtn');
+
+  document.querySelectorAll('.stars').forEach(group => {
+    const key = group.dataset.group;
+    const buttons = group.querySelectorAll('button');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const value = parseInt(btn.dataset.value, 10);
+        ratings[key] = value;
+        buttons.forEach(b => {
+          b.classList.toggle('filled', parseInt(b.dataset.value, 10) <= value);
+        });
+        submitBtn.disabled = ratings.geral === 0;
+      });
+    });
+  });
+
+  // Troque pela URL da API quando publicada (ex: https://padapadoca-api.onrender.com)
+  const API_URL = 'http://localhost:8081/api/avaliacoes';
+
+  submitBtn.addEventListener('click', () => {
+    const filledCategories = [ratings.atendimento, ratings.produtos, ratings.ambiente].filter(v => v > 0);
+    const scores = [ratings.geral, ...filledCategories];
+    const avg = scores.reduce((a, b) => a + b, 0) / scores.length;
+
+    document.getElementById('surveyMain').classList.add('hidden');
+    document.getElementById('loadingScreen').classList.add('visible');
+
+    const payload = {
+      notaGeral: ratings.geral,
+      notaAtendimento: ratings.atendimento || null,
+      notaProdutos: ratings.produtos || null,
+      notaAmbiente: ratings.ambiente || null,
+      comentario: document.getElementById('comentario').value || null,
+      nomeCliente: document.getElementById('nome').value || null
+    };
+
+    fetch(API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    }).catch(() => {
+      // API pode estar offline durante testes locais do visual — não trava o fluxo do cliente
+      console.warn('Não foi possível salvar a avaliação agora.');
+    });
+
+    setTimeout(() => {
+      document.getElementById('loadingScreen').classList.remove('visible');
+      document.getElementById('thanksScreen').classList.add('visible');
+
+      if (avg >= 4) {
+        document.getElementById('thanksHigh').style.display = 'block';
+        document.getElementById('thanksLow').style.display = 'none';
+      } else {
+        document.getElementById('thanksHigh').style.display = 'none';
+        document.getElementById('thanksLow').style.display = 'block';
+      }
+    }, 1100);
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+package com.padapadoca.api;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class PadapadocaApiApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(PadapadocaApiApplication.class, args);
+    }
+
+}
