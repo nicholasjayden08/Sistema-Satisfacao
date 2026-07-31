@@ -210,11 +210,6 @@
 
 <main>
 
-  <p class="config-url">
-    API: <input id="apiBase" value="https://padapadoca-api.onrender.com" />
-    <button onclick="reloadAll()" style="cursor:pointer;border:1px solid var(--border);background:#fff;border-radius:6px;padding:0.3rem 0.6rem;">Atualizar</button>
-  </p>
-
   <!-- DASHBOARD -->
   <section class="view active" id="view-dashboard">
     <h1>Dashboard</h1>
@@ -266,7 +261,7 @@
 </main>
 
 <script>
-  let API_BASE = document.getElementById('apiBase').value;
+  const API_BASE = "https://padapadoca-api.onrender.com";
   let paginaAtual = 0;
   let evoChart, distChart, catChart;
 
@@ -477,7 +472,6 @@
   }
 
   function reloadAll() {
-    API_BASE = document.getElementById('apiBase').value.replace(/\/$/, '');
     carregarEstatisticas();
     carregarGraficosDashboard();
     carregarTabela(0);
