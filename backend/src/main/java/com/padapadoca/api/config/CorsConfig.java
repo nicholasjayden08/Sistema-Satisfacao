@@ -14,6 +14,9 @@ public class CorsConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/api/**")
                 .allowedOrigins("*")
-                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS");
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                // "Authorization" precisa estar liberado aqui, senao o preflight do
+                // navegador bloqueia o Basic Auth que o painel admin passa a enviar.
+                .allowedHeaders("*");
     }
 }
