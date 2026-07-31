@@ -1,159 +1,202 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Padá Padoca — Painel</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Padá Padoca — Painel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"><script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
-<style>
-  :root{
-    --wine-900:#2E1214;
-    --wine-700:#4A2224;
-    --wine-500:#6B3A3D;
-    --cream-100:#FCF8F4;
-    --cream-200:#F3E9DA;
-    --gold:#C9A15B;
-    --ink:#2B1912;
-    --ink-soft:#6B5850;
-    --border:#E6DACB;
-    --radius:12px;
-  }
-  *{box-sizing:border-box;}
-  body{
-    margin:0;
-    background:var(--cream-100);
-    font-family: 'Poppins', sans-serif;
-    color:var(--ink);
-    display:flex;
-    min-height:100vh;
-  }
+  <style>
+    :root{
+      --wine-900:#2E1214;
+      --wine-700:#4A2224;
+      --wine-500:#6B3A3D;
+      --cream-100:#FCF8F4;
+      --cream-200:#F3E9DA;
+      --gold:#C9A15B;
+      --ink:#2B1912;
+      --ink-soft:#6B5850;
+      --border:#E6DACB;
+      --radius:12px;
+    }
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      background:var(--cream-100);
+      font-family: 'Poppins', sans-serif;
+      color:var(--ink);
+      display:flex;
+      min-height:100vh;
+    }
 
-  /* Sidebar */
-  aside{
-    width:220px;
-    background:var(--wine-700);
-    color:var(--cream-200);
-    display:flex;
-    flex-direction:column;
-    padding:1.5rem 1rem;
-    flex-shrink:0;
-  }
-  aside .brand{
-    font-family: 'Bodoni Moda', serif;
-    font-weight:600;
-    font-size:1.3rem;
-    margin:0 0 2rem;
-    padding:0 0.5rem;
-  }
-  aside nav{ flex:1; display:flex; flex-direction:column; gap:0.25rem; }
-  aside nav button{
-    all:unset;
-    cursor:pointer;
-    padding:0.7rem 0.75rem;
-    border-radius:8px;
-    font-size:0.92rem;
-    color:var(--cream-200);
-    opacity:0.75;
-  }
-  aside nav button:hover{ opacity:1; background:rgba(255,255,255,0.06); }
-  aside nav button.active{
-    opacity:1;
-    background:rgba(255,255,255,0.12);
-    font-weight:600;
-  }
+    /* Sidebar */
+    aside{
+      width:220px;
+      background:var(--wine-700);
+      color:var(--cream-200);
+      display:flex;
+      flex-direction:column;
+      padding:1.5rem 1rem;
+      flex-shrink:0;
+    }
+    aside .brand{
+      font-family: 'Bodoni Moda', serif;
+      font-weight:600;
+      font-size:1.3rem;
+      margin:0 0 2rem;
+      padding:0 0.5rem;
+    }
+    aside nav{ flex:1; display:flex; flex-direction:column; gap:0.25rem; }
+    aside nav button{
+      all:unset;
+      cursor:pointer;
+      padding:0.7rem 0.75rem;
+      border-radius:8px;
+      font-size:0.92rem;
+      color:var(--cream-200);
+      opacity:0.75;
+    }
+    aside nav button:hover{ opacity:1; background:rgba(255,255,255,0.06); }
+    aside nav button.active{
+      opacity:1;
+      background:rgba(255,255,255,0.12);
+      font-weight:600;
+    }
 
-  /* Main content */
-  main{ flex:1; padding:2rem 2.5rem; overflow-x:hidden; }
-  .view{ display:none; }
-  .view.active{ display:block; }
+    /* Main content */
+    main{ flex:1; padding:2rem 2.5rem; overflow-x:hidden; }
+    .view{ display:none; }
+    .view.active{ display:block; }
 
-  h1{
-    font-family:'Bodoni Moda', serif;
-    font-size:2rem;
-    font-weight:600;
-    margin:0 0 1.5rem;
-  }
+    h1{
+      font-family:'Bodoni Moda', serif;
+      font-size:2rem;
+      font-weight:600;
+      margin:0 0 1.5rem;
+    }
 
-  .cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
-    gap:1rem;
-    margin-bottom:1.75rem;
-  }
-  .card{
-    background:#fff;
-    border:1px solid var(--border);
-    border-radius:var(--radius);
-    padding:1.1rem 1.25rem;
-  }
-  .card .label{ font-size:0.8rem; color:var(--ink-soft); margin-bottom:0.5rem; }
-  .card .value{ font-size:1.6rem; font-weight:700; }
-  .card .value.stars::after{ content:" ★"; color:var(--gold); }
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
+      gap:1rem;
+      margin-bottom:1.75rem;
+    }
+    .card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:1.1rem 1.25rem;
+    }
+    .card .label{ font-size:0.8rem; color:var(--ink-soft); margin-bottom:0.5rem; }
+    .card .value{ font-size:1.6rem; font-weight:700; }
+    .card .value.stars::after{ content:" ★"; color:var(--gold); }
 
-  .charts-row{
-    display:grid;
-    grid-template-columns:1.3fr 1fr;
-    gap:1rem;
-    margin-bottom:1.75rem;
-  }
-  .chart-box{
-    background:#fff;
-    border:1px solid var(--border);
-    border-radius:var(--radius);
-    padding:1.25rem;
-  }
-  .chart-box h3{ font-size:0.95rem; margin:0 0 1rem; }
-  .chart-box canvas{ max-height:240px; }
+    .charts-row{
+      display:grid;
+      grid-template-columns:1.3fr 1fr;
+      gap:1rem;
+      margin-bottom:1.75rem;
+    }
+    .chart-box{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:1.25rem;
+    }
+    .chart-box h3{ font-size:0.95rem; margin:0 0 1rem; }
+    .chart-box canvas{ max-height:240px; }
 
-  table{
-    width:100%;
-    border-collapse:collapse;
-    background:#fff;
-    border:1px solid var(--border);
-    border-radius:var(--radius);
-    overflow:hidden;
-  }
-  thead{ background:var(--cream-200); }
-  th, td{
-    text-align:left;
-    padding:0.7rem 0.9rem;
-    font-size:0.86rem;
-    border-bottom:1px solid var(--border);
-  }
-  th{ color:var(--ink-soft); font-weight:600; text-transform:uppercase; font-size:0.72rem; letter-spacing:0.04em; }
-  tr:last-child td{ border-bottom:none; }
-  td.comentario{ max-width:260px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+    table{
+      width:100%;
+      border-collapse:collapse;
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      overflow:hidden;
+    }
+    thead{ background:var(--cream-200); }
+    th, td{
+      text-align:left;
+      padding:0.7rem 0.9rem;
+      font-size:0.86rem;
+      border-bottom:1px solid var(--border);
+    }
+    th{ color:var(--ink-soft); font-weight:600; text-transform:uppercase; font-size:0.72rem; letter-spacing:0.04em; }
+    tr:last-child td{ border-bottom:none; }
+    td.comentario{ max-width:260px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
 
-  .stars-inline{ color:var(--wine-700); letter-spacing:1px; white-space:nowrap; }
-  .stars-inline .empty{ color:#D9CBBB; }
+    .stars-inline{ color:var(--wine-700); letter-spacing:1px; white-space:nowrap; }
+    .stars-inline .empty{ color:#D9CBBB; }
 
-  .pagination{
-    display:flex; gap:0.4rem; justify-content:flex-end; margin-top:1rem;
-  }
-  .pagination button{
-    border:1px solid var(--border);
-    background:#fff;
-    border-radius:6px;
-    padding:0.35rem 0.7rem;
-    cursor:pointer;
-    font-size:0.82rem;
-  }
-  .pagination button.active{ background:var(--wine-700); color:#fff; border-color:var(--wine-700); }
-  .pagination button:disabled{ opacity:0.4; cursor:not-allowed; }
+    .pagination{
+      display:flex; gap:0.4rem; justify-content:flex-end; margin-top:1rem;
+    }
+    .pagination button{
+      border:1px solid var(--border);
+      background:#fff;
+      border-radius:6px;
+      padding:0.35rem 0.7rem;
+      cursor:pointer;
+      font-size:0.82rem;
+    }
+    .pagination button.active{ background:var(--wine-700); color:#fff; border-color:var(--wine-700); }
+    .pagination button:disabled{ opacity:0.4; cursor:not-allowed; }
 
-  .empty-state{
-    text-align:center; padding:3rem; color:var(--ink-soft); font-size:0.95rem;
-  }
-  .config-url{
-    font-size:0.8rem; color:var(--ink-soft); margin-bottom:1.5rem;
-  }
-  .config-url input{
-    font-size:0.8rem; padding:0.3rem 0.5rem; border:1px solid var(--border); border-radius:6px; width:260px;
-  }
-</style>
+    .empty-state{
+      text-align:center; padding:3rem; color:var(--ink-soft); font-size:0.95rem;
+    }
+    .config-url{
+      font-size:0.8rem; color:var(--ink-soft); margin-bottom:1.5rem;
+    }
+    .config-url input{
+      font-size:0.8rem; padding:0.3rem 0.5rem; border:1px solid var(--border); border-radius:6px; width:260px;
+    }
+
+    /* Tela de login */
+    #loginOverlay{
+      position:fixed; inset:0; background:var(--cream-100);
+      display:flex; align-items:center; justify-content:center; z-index:100;
+    }
+    #loginOverlay.hidden{ display:none; }
+    .login-box{
+      background:#fff; border:1px solid var(--border); border-radius:var(--radius);
+      padding:2.5rem 2.25rem; width:100%; max-width:320px; text-align:center;
+    }
+    .login-box .brand{
+      font-family:'Bodoni Moda', serif; font-weight:600; font-size:1.4rem; color:var(--wine-700);
+      margin:0 0 1.5rem;
+    }
+    .login-box input{
+      width:100%; padding:0.6rem 0.75rem; border:1px solid var(--border); border-radius:8px;
+      font-size:0.9rem; margin-bottom:0.75rem; box-sizing:border-box; font-family:'Poppins', sans-serif;
+    }
+    .login-box button{
+      width:100%; padding:0.65rem; border:none; border-radius:8px; background:var(--wine-700);
+      color:#fff; font-weight:600; cursor:pointer; font-family:'Poppins', sans-serif;
+    }
+    .login-box button:hover{ background:var(--wine-900); }
+    .login-error{ color:#B23A3A; font-size:0.82rem; margin:0 0 0.75rem; min-height:1.1em; }
+    .logout-btn{
+      all:unset; cursor:pointer; padding:0.6rem 0.75rem; border-radius:8px; font-size:0.85rem;
+      color:var(--cream-200); opacity:0.65; margin-top:auto;
+    }
+    .logout-btn:hover{ opacity:1; background:rgba(255,255,255,0.06); }
+  </style>
 </head>
 <body>
+
+<div id="loginOverlay">
+  <div class="login-box">
+    <p class="brand">padá padoca</p>
+    <p class="login-error" id="loginError"></p>
+    <form id="loginForm">
+      <input id="loginUser" type="text" placeholder="Usuário" autocomplete="username" required />
+      <input id="loginPass" type="password" placeholder="Senha" autocomplete="current-password" required />
+      <button type="submit">Entrar</button>
+    </form>
+  </div>
+</div>
 
 <aside>
   <p class="brand">padá padoca</p>
@@ -162,6 +205,7 @@
     <button data-view="avaliacoes">Avaliações</button>
     <button data-view="estatisticas">Estatísticas</button>
   </nav>
+  <button class="logout-btn" onclick="fazerLogout()">Sair</button>
 </aside>
 
 <main>
@@ -196,9 +240,9 @@
     <h1>Avaliações</h1>
     <table>
       <thead>
-        <tr>
-          <th>Data</th><th>Nome</th><th>Geral</th><th>Atendimento</th><th>Produtos</th><th>Ambiente</th><th>Comentário</th>
-        </tr>
+      <tr>
+        <th>Data</th><th>Nome</th><th>Geral</th><th>Atendimento</th><th>Produtos</th><th>Ambiente</th><th>Comentário</th>
+      </tr>
       </thead>
       <tbody id="tabelaAvaliacoes"></tbody>
     </table>
@@ -226,6 +270,55 @@
   let paginaAtual = 0;
   let evoChart, distChart, catChart;
 
+  // --- Login (Basic Auth) ---------------------------------------------
+  // Credenciais ficam só em sessionStorage: somem quando a aba é fechada,
+  // então cada pessoa que abre o painel precisa logar de novo.
+  function getAuthHeader() {
+    const cred = sessionStorage.getItem('padapadoca_auth');
+    return cred ? { 'Authorization': 'Basic ' + cred } : {};
+  }
+
+  function mostrarLogin(erro) {
+    document.getElementById('loginOverlay').classList.remove('hidden');
+    document.getElementById('loginError').textContent = erro || '';
+  }
+
+  function esconderLogin() {
+    document.getElementById('loginOverlay').classList.add('hidden');
+  }
+
+  function fazerLogout() {
+    sessionStorage.removeItem('padapadoca_auth');
+    mostrarLogin('');
+  }
+
+  document.getElementById('loginForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const user = document.getElementById('loginUser').value;
+    const pass = document.getElementById('loginPass').value;
+    const cred = btoa(user + ':' + pass);
+
+    // Testa as credenciais contra um endpoint protegido antes de aceitar o login.
+    try {
+      const res = await fetch(API_BASE + '/api/avaliacoes/estatisticas', {
+        headers: { 'Authorization': 'Basic ' + cred }
+      });
+      if (res.status === 401) {
+        document.getElementById('loginError').textContent = 'Usuário ou senha incorretos.';
+        return;
+      }
+      if (!res.ok) {
+        document.getElementById('loginError').textContent = 'Não foi possível conectar na API em ' + API_BASE + '.';
+        return;
+      }
+      sessionStorage.setItem('padapadoca_auth', cred);
+      esconderLogin();
+      reloadAll();
+    } catch (err) {
+      document.getElementById('loginError').textContent = 'Não foi possível conectar na API em ' + API_BASE + '.';
+    }
+  });
+
   document.querySelectorAll('aside nav button').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('aside nav button').forEach(b => b.classList.remove('active'));
@@ -243,7 +336,11 @@
   }
 
   async function fetchJSON(path) {
-    const res = await fetch(API_BASE + path);
+    const res = await fetch(API_BASE + path, { headers: getAuthHeader() });
+    if (res.status === 401) {
+      mostrarLogin('Sessão expirada. Faça login novamente.');
+      throw new Error('Não autenticado');
+    }
     if (!res.ok) throw new Error('Falha ao buscar ' + path);
     return res.json();
   }
@@ -375,7 +472,7 @@
       pagDiv.innerHTML = html;
     } catch (e) {
       document.getElementById('tabelaAvaliacoes').innerHTML =
-        `<tr><td colspan="7" class="empty-state">Não foi possível conectar na API em ${API_BASE}. Confirme se o backend está rodando.</td></tr>`;
+              `<tr><td colspan="7" class="empty-state">Não foi possível conectar na API em ${API_BASE}. Confirme se o backend está rodando.</td></tr>`;
     }
   }
 
@@ -386,7 +483,12 @@
     carregarTabela(0);
   }
 
-  reloadAll();
+  if (sessionStorage.getItem('padapadoca_auth')) {
+    esconderLogin();
+    reloadAll();
+  } else {
+    mostrarLogin('');
+  }
 </script>
 </body>
 </html>
