@@ -18,7 +18,7 @@
     <description>API de pesquisa de satisfacao - Pada Padoca</description>
 
     <properties>
-        <java.version>26</java.version>
+        <java.version>21</java.version>
     </properties>
 
     <dependencies>
@@ -40,10 +40,9 @@
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 
-        <!-- Banco H2 em arquivo: zero configuracao pra comecar, facil trocar por Postgres/MySQL depois -->
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
             <scope>runtime</scope>
         </dependency>
 
