@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4758ab08-2ef4-4d34-a8d9-2de74114678a" name="Changes" comment="fix: resolve CORS with Spring Security">
+    <list default="true" id="4758ab08-2ef4-4d34-a8d9-2de74114678a" name="Changes" comment="fix: read port from PORT env var (was hardcoded to 8081)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -267,7 +266,31 @@
       <option name="project" value="LOCAL" />
       <updated>1785759955966</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="fix: read port from PORT env var (was hardcoded to 8081)">
+      <option name="closed" value="true" />
+      <created>1785762052647</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1785762052647</updated>
+    </task>
+    <task id="LOCAL-00025" summary="fix: read port from PORT env var (was hardcoded to 8081)">
+      <option name="closed" value="true" />
+      <created>1785762069789</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1785762069789</updated>
+    </task>
+    <task id="LOCAL-00026" summary="fix: read port from PORT env var (was hardcoded to 8081)">
+      <option name="closed" value="true" />
+      <created>1785762087283</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1785762087283</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,6 +307,7 @@
     <MESSAGE value="fix: remove the API url in the admin view" />
     <MESSAGE value="fix: configure CORS for GitHub Pages" />
     <MESSAGE value="fix: resolve CORS with Spring Security" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: resolve CORS with Spring Security" />
+    <MESSAGE value="fix: read port from PORT env var (was hardcoded to 8081)" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: read port from PORT env var (was hardcoded to 8081)" />
   </component>
 </project>
