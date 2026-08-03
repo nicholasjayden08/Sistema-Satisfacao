@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4758ab08-2ef4-4d34-a8d9-2de74114678a" name="Changes" comment="feat: migrate database from H2 to PostgreSQL">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="4758ab08-2ef4-4d34-a8d9-2de74114678a" name="Changes" comment="feat: migrate database from H2 to PostgreSQL" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -346,7 +344,15 @@
       <option name="project" value="LOCAL" />
       <updated>1785783568082</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="feat: migrate database from H2 to PostgreSQL">
+      <option name="closed" value="true" />
+      <created>1785783623829</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1785783623829</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
