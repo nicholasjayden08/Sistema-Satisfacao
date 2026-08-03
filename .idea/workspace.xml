@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4758ab08-2ef4-4d34-a8d9-2de74114678a" name="Changes" comment="fix: remove the API url in the admin view">
+    <list default="true" id="4758ab08-2ef4-4d34-a8d9-2de74114678a" name="Changes" comment="fix: configure CORS for GitHub Pages">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/padapadoca/api/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/padapadoca/api/config/CorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/padapadoca/api/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/padapadoca/api/config/SecurityConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -226,7 +228,23 @@
       <option name="project" value="LOCAL" />
       <updated>1785508490344</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="fix: configure CORS for GitHub Pages">
+      <option name="closed" value="true" />
+      <created>1785759203155</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1785759203155</updated>
+    </task>
+    <task id="LOCAL-00020" summary="fix: configure CORS for GitHub Pages">
+      <option name="closed" value="true" />
+      <created>1785759221381</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1785759221381</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,6 +259,7 @@
     <MESSAGE value="feat: add frontend pages for github pages" />
     <MESSAGE value="feat: protect admin panel with basic authentication" />
     <MESSAGE value="fix: remove the API url in the admin view" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: remove the API url in the admin view" />
+    <MESSAGE value="fix: configure CORS for GitHub Pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: configure CORS for GitHub Pages" />
   </component>
 </project>
