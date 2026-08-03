@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4758ab08-2ef4-4d34-a8d9-2de74114678a" name="Changes" comment="fix: read port from PORT env var (was hardcoded to 8081)">
+    <list default="true" id="4758ab08-2ef4-4d34-a8d9-2de74114678a" name="Changes" comment="fix: restore Chart.js loading in admin dashboard">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/pesquisa-satisfacao.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/pesquisa-satisfacao.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -290,7 +291,23 @@
       <option name="project" value="LOCAL" />
       <updated>1785762087283</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="fix: restore Chart.js loading in admin dashboard">
+      <option name="closed" value="true" />
+      <created>1785765341124</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1785765341124</updated>
+    </task>
+    <task id="LOCAL-00028" summary="fix: restore Chart.js loading in admin dashboard">
+      <option name="closed" value="true" />
+      <created>1785765360726</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1785765360726</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -308,6 +325,7 @@
     <MESSAGE value="fix: configure CORS for GitHub Pages" />
     <MESSAGE value="fix: resolve CORS with Spring Security" />
     <MESSAGE value="fix: read port from PORT env var (was hardcoded to 8081)" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: read port from PORT env var (was hardcoded to 8081)" />
+    <MESSAGE value="fix: restore Chart.js loading in admin dashboard" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: restore Chart.js loading in admin dashboard" />
   </component>
 </project>
