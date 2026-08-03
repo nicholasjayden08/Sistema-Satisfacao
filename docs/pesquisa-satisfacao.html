@@ -267,6 +267,15 @@
   </header>
 
   <main id="surveyMain">
+    <div class="field">
+      <label for="nome">Seu nome *</label>
+      <input
+              id="nome"
+              type="text"
+              placeholder="Digite seu nome"
+              maxlength="80"
+              required>
+    </div>
     <h2 class="question">Como foi sua experiência hoje?</h2>
     <div class="stars big" data-group="geral" aria-label="Nota geral">
       <button type="button" data-value="1"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.95 6.28 6.85.83-5.1 4.72 1.42 6.87L12 17.6l-6.12 3.6 1.42-6.87-5.1-4.72 6.85-.83z"/></svg></button>
@@ -313,13 +322,9 @@
       <label for="comentario">Conte como foi sua experiência</label>
       <textarea id="comentario" placeholder="O pão de queijo estava quentinho..."></textarea>
     </div>
-    <div class="field">
-      <label for="nome">Seu nome (opcional)</label>
-      <input id="nome" type="text" placeholder="Maria Silva">
-    </div>
 
     <button class="submit-btn" id="submitBtn" disabled>Enviar avaliação</button>
-    <p class="hint">Dê pelo menos a nota geral para enviar.</p>
+    <p class="hint">Informe seu nome e dê uma nota geral para enviar.</p>
   </main>
 
   <section class="loading" id="loadingScreen">
@@ -379,27 +384,57 @@
 
   const ratings = { geral: 0, atendimento: 0, produtos: 0, ambiente: 0 };
   const submitBtn = document.getElementById('submitBtn');
+  const nomeInput = document.getElementById('nome');
+
+  function atualizarBotao() {
+    submitBtn.disabled =
+            ratings.geral === 0 ||
+            nomeInput.value.trim() === "";
+  }
 
   document.querySelectorAll('.stars').forEach(group => {
     const key = group.dataset.group;
     const buttons = group.querySelectorAll('button');
+
     buttons.forEach(btn => {
       btn.addEventListener('click', () => {
         const value = parseInt(btn.dataset.value, 10);
         ratings[key] = value;
+
         buttons.forEach(b => {
-          b.classList.toggle('filled', parseInt(b.dataset.value, 10) <= value);
+          b.classList.toggle(
+                  'filled',
+                  parseInt(b.dataset.value, 10) <= value
+          );
         });
-        submitBtn.disabled = ratings.geral === 0;
+
+        atualizarBotao();
       });
     });
   });
+
+
+  nomeInput.addEventListener("input", atualizarBotao);
+
+  atualizarBotao();
 
   // Troque pela URL da API quando publicada (ex: https://padapadoca-api.onrender.com)
   const API_URL = 'https://padapadoca-api.onrender.com/api/avaliacoes';
 
   submitBtn.addEventListener('click', () => {
-    const filledCategories = [ratings.atendimento, ratings.produtos, ratings.ambiente].filter(v => v > 0);
+
+    const nome = nomeInput.value.trim();
+
+    if (!nome) {
+        alert("Informe seu nome.");
+        return;
+    }
+
+    const filledCategories = [
+        ratings.atendimento,
+        ratings.produtos,
+        ratings.ambiente
+    ].filter(v => v > 0);
     const scores = [ratings.geral, ...filledCategories];
     const avg = scores.reduce((a, b) => a + b, 0) / scores.length;
 
@@ -412,30 +447,37 @@
       notaProdutos: ratings.produtos || null,
       notaAmbiente: ratings.ambiente || null,
       comentario: document.getElementById('comentario').value || null,
-      nomeCliente: document.getElementById('nome').value || null
+      nomeCliente: nomeInput.value.trim()
     };
 
     fetch(API_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
-    }).catch(() => {
-      // API pode estar offline durante testes locais do visual — não trava o fluxo do cliente
-      console.warn('Não foi possível salvar a avaliação agora.');
-    });
+    })
+            .then(() => {
+              mostrarObrigado();
+            })
+            .catch(() => {
+              console.warn('Erro ao enviar avaliação.');
+              mostrarObrigado();
+            });
 
-    setTimeout(() => {
-      document.getElementById('loadingScreen').classList.remove('visible');
-      document.getElementById('thanksScreen').classList.add('visible');
+    function mostrarObrigado(){
+      setTimeout(() => {
+        document.getElementById('loadingScreen').classList.remove('visible');
+        document.getElementById('thanksScreen').classList.add('visible');
 
-      if (avg >= 4) {
-        document.getElementById('thanksHigh').style.display = 'block';
-        document.getElementById('thanksLow').style.display = 'none';
-      } else {
-        document.getElementById('thanksHigh').style.display = 'none';
-        document.getElementById('thanksLow').style.display = 'block';
-      }
-    }, 1100);
+        if(avg >= 4){
+          document.getElementById('thanksHigh').style.display = 'block';
+          document.getElementById('thanksLow').style.display = 'none';
+        } else {
+          document.getElementById('thanksHigh').style.display = 'none';
+          document.getElementById('thanksLow').style.display = 'block';
+        }
+
+      },1100);
+    }
   });
 </script>
 </body>
