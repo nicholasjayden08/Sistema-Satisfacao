@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4758ab08-2ef4-4d34-a8d9-2de74114678a" name="Changes" comment="fix: restore Chart.js loading in admin dashboard">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/pesquisa-satisfacao.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/pesquisa-satisfacao.html" afterDir="false" />
-    </list>
+    <list default="true" id="4758ab08-2ef4-4d34-a8d9-2de74114678a" name="Changes" comment="feat: add mandatory customer name field to survey flow" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -307,7 +304,23 @@
       <option name="project" value="LOCAL" />
       <updated>1785765360726</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="feat: add mandatory customer name field to survey flow">
+      <option name="closed" value="true" />
+      <created>1785767702016</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1785767702016</updated>
+    </task>
+    <task id="LOCAL-00030" summary="feat: add mandatory customer name field to survey flow">
+      <option name="closed" value="true" />
+      <created>1785767717750</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1785767717750</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -326,6 +339,7 @@
     <MESSAGE value="fix: resolve CORS with Spring Security" />
     <MESSAGE value="fix: read port from PORT env var (was hardcoded to 8081)" />
     <MESSAGE value="fix: restore Chart.js loading in admin dashboard" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: restore Chart.js loading in admin dashboard" />
+    <MESSAGE value="feat: add mandatory customer name field to survey flow" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add mandatory customer name field to survey flow" />
   </component>
 </project>
