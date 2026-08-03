@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4758ab08-2ef4-4d34-a8d9-2de74114678a" name="Changes" comment="feat: migrate database from H2 to PostgreSQL">
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
-    </list>
+    <list default="true" id="4758ab08-2ef4-4d34-a8d9-2de74114678a" name="Changes" comment="fix: correct PostgreSQL datasource configuration" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -370,7 +368,23 @@
       <option name="project" value="LOCAL" />
       <updated>1785784280019</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="fix: correct PostgreSQL datasource configuration">
+      <option name="closed" value="true" />
+      <created>1785785595731</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1785785595731</updated>
+    </task>
+    <task id="LOCAL-00038" summary="fix: correct PostgreSQL datasource configuration">
+      <option name="closed" value="true" />
+      <created>1785785617195</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1785785617196</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -391,6 +405,7 @@
     <MESSAGE value="fix: restore Chart.js loading in admin dashboard" />
     <MESSAGE value="feat: add mandatory customer name field to survey flow" />
     <MESSAGE value="feat: migrate database from H2 to PostgreSQL" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: migrate database from H2 to PostgreSQL" />
+    <MESSAGE value="fix: correct PostgreSQL datasource configuration" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: correct PostgreSQL datasource configuration" />
   </component>
 </project>
