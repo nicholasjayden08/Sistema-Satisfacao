@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4758ab08-2ef4-4d34-a8d9-2de74114678a" name="Changes" comment="feat: migrate database from H2 to PostgreSQL" />
+    <list default="true" id="4758ab08-2ef4-4d34-a8d9-2de74114678a" name="Changes" comment="feat: migrate database from H2 to PostgreSQL">
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -352,7 +354,23 @@
       <option name="project" value="LOCAL" />
       <updated>1785783623829</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="feat: migrate database from H2 to PostgreSQL">
+      <option name="closed" value="true" />
+      <created>1785784259871</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1785784259871</updated>
+    </task>
+    <task id="LOCAL-00036" summary="feat: migrate database from H2 to PostgreSQL">
+      <option name="closed" value="true" />
+      <created>1785784280019</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1785784280019</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
