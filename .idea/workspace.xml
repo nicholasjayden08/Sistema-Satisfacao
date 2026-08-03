@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4758ab08-2ef4-4d34-a8d9-2de74114678a" name="Changes" comment="feat: add mandatory customer name field to survey flow" />
+    <list default="true" id="4758ab08-2ef4-4d34-a8d9-2de74114678a" name="Changes" comment="feat: migrate database from H2 to PostgreSQL">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -320,7 +322,31 @@
       <option name="project" value="LOCAL" />
       <updated>1785767717750</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="feat: add mandatory customer name field to survey flow">
+      <option name="closed" value="true" />
+      <created>1785768194152</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1785768194152</updated>
+    </task>
+    <task id="LOCAL-00032" summary="feat: migrate database from H2 to PostgreSQL">
+      <option name="closed" value="true" />
+      <created>1785783501375</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1785783501375</updated>
+    </task>
+    <task id="LOCAL-00033" summary="feat: migrate database from H2 to PostgreSQL">
+      <option name="closed" value="true" />
+      <created>1785783568082</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1785783568082</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -340,6 +366,7 @@
     <MESSAGE value="fix: read port from PORT env var (was hardcoded to 8081)" />
     <MESSAGE value="fix: restore Chart.js loading in admin dashboard" />
     <MESSAGE value="feat: add mandatory customer name field to survey flow" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add mandatory customer name field to survey flow" />
+    <MESSAGE value="feat: migrate database from H2 to PostgreSQL" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: migrate database from H2 to PostgreSQL" />
   </component>
 </project>
