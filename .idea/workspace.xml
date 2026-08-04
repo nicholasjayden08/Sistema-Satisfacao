@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4758ab08-2ef4-4d34-a8d9-2de74114678a" name="Changes" comment="fix: configure PostgreSQL connection for Render deployment">
+    <list default="true" id="4758ab08-2ef4-4d34-a8d9-2de74114678a" name="Changes" comment="feat: link Google Reviews button to real business review URL">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -410,7 +410,31 @@
       <option name="project" value="LOCAL" />
       <updated>1785786941376</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="fix: configure PostgreSQL connection for Render deployment">
+      <option name="closed" value="true" />
+      <created>1785786980767</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1785786980767</updated>
+    </task>
+    <task id="LOCAL-00043" summary="feat: link Google Reviews button to real business review URL">
+      <option name="closed" value="true" />
+      <created>1785845073755</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1785845073755</updated>
+    </task>
+    <task id="LOCAL-00044" summary="feat: link Google Reviews button to real business review URL">
+      <option name="closed" value="true" />
+      <created>1785845148718</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1785845148718</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -434,6 +458,7 @@
     <MESSAGE value="fix: correct PostgreSQL datasource configuration" />
     <MESSAGE value="fix: configure database connection for Render" />
     <MESSAGE value="fix: configure PostgreSQL connection for Render deployment" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: configure PostgreSQL connection for Render deployment" />
+    <MESSAGE value="feat: link Google Reviews button to real business review URL" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: link Google Reviews button to real business review URL" />
   </component>
 </project>
