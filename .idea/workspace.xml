@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4758ab08-2ef4-4d34-a8d9-2de74114678a" name="Changes" comment="feat: link Google Reviews button to real business review URL">
+    <list default="true" id="4758ab08-2ef4-4d34-a8d9-2de74114678a" name="Changes" comment="feat: add optional wait-time question to satisfaction survey">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/padapadoca/api/dto/AvaliacaoRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/padapadoca/api/dto/AvaliacaoRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/padapadoca/api/dto/AvaliacaoResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/padapadoca/api/dto/AvaliacaoResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/padapadoca/api/service/AvaliacaoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/padapadoca/api/service/AvaliacaoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/painel-admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/painel-admin.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/pesquisa-satisfacao.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/pesquisa-satisfacao.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -434,7 +439,15 @@
       <option name="project" value="LOCAL" />
       <updated>1785845148718</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="feat: add optional wait-time question to satisfaction survey">
+      <option name="closed" value="true" />
+      <created>1786031738923</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1786031738923</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -459,6 +472,7 @@
     <MESSAGE value="fix: configure database connection for Render" />
     <MESSAGE value="fix: configure PostgreSQL connection for Render deployment" />
     <MESSAGE value="feat: link Google Reviews button to real business review URL" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: link Google Reviews button to real business review URL" />
+    <MESSAGE value="feat: add optional wait-time question to satisfaction survey" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add optional wait-time question to satisfaction survey" />
   </component>
 </project>
