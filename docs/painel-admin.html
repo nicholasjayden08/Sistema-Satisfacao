@@ -236,7 +236,7 @@
     <table>
       <thead>
       <tr>
-        <th>Data</th><th>Nome</th><th>Geral</th><th>Atendimento</th><th>Produtos</th><th>Ambiente</th><th>Comentário</th>
+        <th>Data</th><th>Nome</th><th>Geral</th><th>Atendimento</th><th>Produtos</th><th>Ambiente</th><th>Tempo de espera</th><th>Comentário</th>
       </tr>
       </thead>
       <tbody id="tabelaAvaliacoes"></tbody>
@@ -435,14 +435,24 @@
     return `<span class="stars-inline">${starString(nota)}</span>`;
   }
 
+  function renderTempoEspera(codigo) {
+    const labels = {
+      MUITO_RAPIDO: 'Muito rápido',
+      RAPIDO: 'Rápido',
+      NORMAL: 'Normal',
+      DEMORADO: 'Demorado',
+      MUITO_DEMORADO: 'Muito demorado'
+    };
+    return labels[codigo] || '<span style="color:#C7B9A8">—</span>';
+  }
+
   async function carregarTabela(pagina = 0) {
     try {
       const dados = await fetchJSON(`/api/avaliacoes?page=${pagina}&size=10&sort=dataHora,desc`);
       const tbody = document.getElementById('tabelaAvaliacoes');
 
       if (!dados.content.length) {
-        tbody.innerHTML = `<tr><td colspan="7" class="empty-state">Nenhuma avaliação ainda. Assim que alguém responder pelo QR code, aparece aqui.</td></tr>`;
-      } else {
+        tbody.innerHTML = `<tr><td colspan="8" class="empty-state">Nenhuma avaliação ainda. Assim que alguém responder pelo QR code, aparece aqui.</td></tr>`;      } else {
         tbody.innerHTML = dados.content.map(a => `
           <tr>
             <td>${new Date(a.dataHora).toLocaleString('pt-BR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' })}</td>
@@ -451,6 +461,7 @@
             <td>${renderEstrelas(a.notaAtendimento)}</td>
             <td>${renderEstrelas(a.notaProdutos)}</td>
             <td>${renderEstrelas(a.notaAmbiente)}</td>
+            <td>${renderTempoEspera(a.tempoEspera)}</td>
             <td class="comentario" title="${(a.comentario || '').replace(/"/g, '&quot;')}">${a.comentario || '—'}</td>
           </tr>
         `).join('');
@@ -467,7 +478,7 @@
       pagDiv.innerHTML = html;
     } catch (e) {
       document.getElementById('tabelaAvaliacoes').innerHTML =
-              `<tr><td colspan="7" class="empty-state">Não foi possível conectar na API em ${API_BASE}. Confirme se o backend está rodando.</td></tr>`;
+              `<tr><td colspan="8" class="empty-state">Não foi possível conectar na API em ${API_BASE}. Confirme se o backend está rodando.</td></tr>`;
     }
   }
 
