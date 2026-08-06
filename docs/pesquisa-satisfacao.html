@@ -121,6 +121,29 @@
     margin-bottom:0.6rem;
   }
 
+  .choice-group{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.5rem;
+    margin-bottom:0.25rem;
+  }
+  .choice-group button{
+    background:#fff;
+    border:1.5px solid #E4D8C6;
+    border-radius:20px;
+    padding:0.55rem 1rem;
+    font-family:inherit;
+    font-size:0.85rem;
+    color:var(--ink-soft);
+    cursor:pointer;
+    transition:all 0.15s ease;
+  }
+  .choice-group button.selected{
+    background:var(--wine-700);
+    border-color:var(--wine-700);
+    color:var(--cream-200);
+  }
+
   .card{
     margin:0.5rem 0 1.75rem;
   }
@@ -316,6 +339,16 @@
           <button type="button" data-value="5"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.95 6.28 6.85.83-5.1 4.72 1.42 6.87L12 17.6l-6.12 3.6 1.42-6.87-5.1-4.72 6.85-.83z"/></svg></button>
         </div>
       </div>
+      <div class="category-block">
+        <span class="label">Tempo de espera</span>
+        <div class="choice-group" data-group="tempoEspera">
+          <button type="button" data-value="MUITO_RAPIDO">Muito rápido</button>
+          <button type="button" data-value="RAPIDO">Rápido</button>
+          <button type="button" data-value="NORMAL">Normal</button>
+          <button type="button" data-value="DEMORADO">Demorado</button>
+          <button type="button" data-value="MUITO_DEMORADO">Muito demorado</button>
+        </div>
+      </div>
     </div>
 
     <div class="field">
@@ -412,6 +445,18 @@
     });
   });
 
+  document.querySelectorAll('.choice-group').forEach(group => {
+    const key = group.dataset.group;
+    const buttons = group.querySelectorAll('button');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        ratings[key] = btn.dataset.value;
+        buttons.forEach(b => b.classList.toggle('selected', b === btn));
+      });
+    });
+  });
+
 
   nomeInput.addEventListener("input", atualizarBotao);
 
@@ -445,6 +490,7 @@
       notaAtendimento: ratings.atendimento || null,
       notaProdutos: ratings.produtos || null,
       notaAmbiente: ratings.ambiente || null,
+      tempoEspera: ratings.tempoEspera,
       comentario: document.getElementById('comentario').value || null,
       nomeCliente: nomeInput.value.trim()
     };
