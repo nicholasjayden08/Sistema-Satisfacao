@@ -4,6 +4,7 @@ import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.Pattern;
 
 public class AvaliacaoRequestDTO {
 
@@ -20,6 +21,10 @@ public class AvaliacaoRequestDTO {
 
     @Min(1) @Max(5)
     private Integer notaAmbiente;
+
+    @Pattern(regexp = "MUITO_RAPIDO|RAPIDO|NORMAL|DEMORADO|MUITO_DEMORADO",
+            message = "Tempo de espera inválido")
+    private String tempoEspera;
 
     @Size(max = 1000, message = "O comentário deve ter no máximo 1000 caracteres")
     private String comentario;
@@ -57,6 +62,14 @@ public class AvaliacaoRequestDTO {
 
     public void setNotaAmbiente(Integer notaAmbiente) {
         this.notaAmbiente = notaAmbiente;
+    }
+
+    public String getTempoEspera() {
+        return tempoEspera;
+    }
+
+    public void setTempoEspera(String tempoEspera) {
+        this.tempoEspera = tempoEspera;
     }
 
     public String getComentario() {
