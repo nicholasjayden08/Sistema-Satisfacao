@@ -28,6 +28,8 @@ public class Avaliacao {
 
     private Integer notaAmbiente;
 
+    private String tempoEspera;
+
     @Column(length = 1000)
     private String comentario;
 
@@ -77,6 +79,14 @@ public class Avaliacao {
 
     public void setNotaAmbiente(Integer notaAmbiente) {
         this.notaAmbiente = notaAmbiente;
+    }
+
+    public String getTempoEspera() {
+        return tempoEspera;
+    }
+
+    public void setTempoEspera(String tempoEspera) {
+        this.tempoEspera = tempoEspera;
     }
 
     public String getComentario() {
