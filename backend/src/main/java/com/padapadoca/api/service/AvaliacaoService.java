@@ -26,6 +26,7 @@ public class AvaliacaoService {
         avaliacao.setNotaAtendimento(dto.getNotaAtendimento());
         avaliacao.setNotaProdutos(dto.getNotaProdutos());
         avaliacao.setNotaAmbiente(dto.getNotaAmbiente());
+        avaliacao.setTempoEspera(dto.getTempoEspera());
         avaliacao.setComentario(dto.getComentario());
         avaliacao.setNomeCliente(dto.getNomeCliente());
         avaliacao.setDataHora(LocalDateTime.now());
