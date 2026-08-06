@@ -11,6 +11,7 @@ public class AvaliacaoResponseDTO {
     private Integer notaAtendimento;
     private Integer notaProdutos;
     private Integer notaAmbiente;
+    private String tempoEspera;
     private String comentario;
     private String nomeCliente;
     private LocalDateTime dataHora;
@@ -26,6 +27,7 @@ public class AvaliacaoResponseDTO {
         dto.notaAmbiente = a.getNotaAmbiente();
         dto.comentario = a.getComentario();
         dto.nomeCliente = a.getNomeCliente();
+        dto.tempoEspera = a.getTempoEspera();
         dto.dataHora = a.getDataHora();
         dto.media = Math.round(a.calcularMedia() * 10) / 10.0;
         dto.recomendaGoogle = a.calcularMedia() >= 4.0;
@@ -50,6 +52,10 @@ public class AvaliacaoResponseDTO {
 
     public Integer getNotaAmbiente() {
         return notaAmbiente;
+    }
+
+    public String getTempoEspera() {
+        return tempoEspera;
     }
 
     public String getComentario() {
