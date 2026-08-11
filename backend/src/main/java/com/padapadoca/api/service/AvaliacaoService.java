@@ -10,6 +10,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 
 @Service
 public class AvaliacaoService {
@@ -30,7 +31,9 @@ public class AvaliacaoService {
         avaliacao.setComoConheceu(dto.getComoConheceu());
         avaliacao.setComentario(dto.getComentario());
         avaliacao.setNomeCliente(dto.getNomeCliente());
-        avaliacao.setDataHora(LocalDateTime.now());
+        avaliacao.setDataHora(
+    LocalDateTime.now(ZoneId.of("America/Sao_Paulo"))
+);
 
         Avaliacao salva = repository.save(avaliacao);
         return AvaliacaoResponseDTO.fromEntity(salva);
