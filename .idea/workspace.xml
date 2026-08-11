@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4758ab08-2ef4-4d34-a8d9-2de74114678a" name="Changes" comment="feat: add optional wait-time question to satisfaction survey">
+    <list default="true" id="4758ab08-2ef4-4d34-a8d9-2de74114678a" name="Changes" comment="feat: add 'como conheceu' field">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/pesquisa-satisfacao.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/pesquisa-satisfacao.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,30 +51,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.PadapadocaApiApplication.executor": "Run",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "Spring Boot.PadapadocaApiApplication.executor": "Run",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/studiocreative/Desktop/padapadoca-projeto",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.PadapadocaApiApplication.executor&quot;: &quot;Run&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;Spring Boot.PadapadocaApiApplication.executor&quot;: &quot;Run&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/studiocreative/Desktop/padapadoca-projeto&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="4758ab08-2ef4-4d34-a8d9-2de74114678a" name="Changes" comment="" />
@@ -83,62 +82,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1785411965628</updated>
-    </task>
-    <task id="LOCAL-00001" summary="init commit">
-      <option name="closed" value="true" />
-      <created>1785415542506</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1785415542506</updated>
-    </task>
-    <task id="LOCAL-00002" summary="init commit">
-      <option name="closed" value="true" />
-      <created>1785420359910</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1785420359910</updated>
-    </task>
-    <task id="LOCAL-00003" summary="feat: add Dockerfile for Spring Boot backend deployment">
-      <option name="closed" value="true" />
-      <created>1785421337568</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1785421337568</updated>
-    </task>
-    <task id="LOCAL-00004" summary="fix: use Maven installation in Docker build">
-      <option name="closed" value="true" />
-      <created>1785421713381</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1785421713381</updated>
-    </task>
-    <task id="LOCAL-00005" summary="fix: update Docker image to Java 26">
-      <option name="closed" value="true" />
-      <created>1785421879012</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1785421879013</updated>
-    </task>
-    <task id="LOCAL-00006" summary="fix: allow jar wildcard execution in Docker">
-      <option name="closed" value="true" />
-      <created>1785422150223</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1785422150223</updated>
-    </task>
-    <task id="LOCAL-00007" summary="feat: add frontend pages for github pages">
-      <option name="closed" value="true" />
-      <created>1785424163763</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1785424163763</updated>
     </task>
     <task id="LOCAL-00008" summary="feat: protect admin panel with basic authentication">
       <option name="closed" value="true" />
@@ -444,7 +387,95 @@
       <option name="project" value="LOCAL" />
       <updated>1786031738923</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="fix: remove the bread decoration in the review screen">
+      <option name="closed" value="true" />
+      <created>1786111530404</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1786111530404</updated>
+    </task>
+    <task id="LOCAL-00047" summary="fix: remove the bread decoration in the review screen">
+      <option name="closed" value="true" />
+      <created>1786111549832</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1786111549832</updated>
+    </task>
+    <task id="LOCAL-00048" summary="feat: add 'como conheceu' field">
+      <option name="closed" value="true" />
+      <created>1786456397599</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1786456397599</updated>
+    </task>
+    <task id="LOCAL-00049" summary="feat: add 'como conheceu' field">
+      <option name="closed" value="true" />
+      <created>1786456426533</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1786456426533</updated>
+    </task>
+    <task id="LOCAL-00050" summary="feat: add 'como conheceu' field">
+      <option name="closed" value="true" />
+      <created>1786456454960</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1786456454960</updated>
+    </task>
+    <task id="LOCAL-00051" summary="feat: add 'como conheceu' field">
+      <option name="closed" value="true" />
+      <created>1786456476892</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1786456476894</updated>
+    </task>
+    <task id="LOCAL-00052" summary="feat: add 'como conheceu' field">
+      <option name="closed" value="true" />
+      <created>1786456509610</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1786456509610</updated>
+    </task>
+    <task id="LOCAL-00053" summary="feat: add 'como conheceu' field">
+      <option name="closed" value="true" />
+      <created>1786456532391</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1786456532391</updated>
+    </task>
+    <task id="LOCAL-00054" summary="feat: add 'como conheceu' field">
+      <option name="closed" value="true" />
+      <created>1786456551839</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1786456551840</updated>
+    </task>
+    <task id="LOCAL-00055" summary="feat: add 'como conheceu' field">
+      <option name="closed" value="true" />
+      <created>1786456576109</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1786456576109</updated>
+    </task>
+    <task id="LOCAL-00056" summary="feat: add 'como conheceu' field">
+      <option name="closed" value="true" />
+      <created>1786456598800</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1786456598800</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -470,6 +501,8 @@
     <MESSAGE value="fix: configure PostgreSQL connection for Render deployment" />
     <MESSAGE value="feat: link Google Reviews button to real business review URL" />
     <MESSAGE value="feat: add optional wait-time question to satisfaction survey" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add optional wait-time question to satisfaction survey" />
+    <MESSAGE value="fix: remove the bread decoration in the review screen" />
+    <MESSAGE value="feat: add 'como conheceu' field" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add 'como conheceu' field" />
   </component>
 </project>
