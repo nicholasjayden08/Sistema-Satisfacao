@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4758ab08-2ef4-4d34-a8d9-2de74114678a" name="Changes" comment="feat: add 'como conheceu' field">
+    <list default="true" id="4758ab08-2ef4-4d34-a8d9-2de74114678a" name="Changes" comment="fix: evaluation timezone">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,22 +83,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1785411965628</updated>
-    </task>
-    <task id="LOCAL-00009" summary="feat: protect admin panel with basic authentication">
-      <option name="closed" value="true" />
-      <created>1785507642570</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1785507642570</updated>
-    </task>
-    <task id="LOCAL-00010" summary="feat: protect admin panel with basic authentication">
-      <option name="closed" value="true" />
-      <created>1785507666265</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1785507666265</updated>
     </task>
     <task id="LOCAL-00011" summary="feat: protect admin panel with basic authentication">
       <option name="closed" value="true" />
@@ -475,7 +460,23 @@
       <option name="project" value="LOCAL" />
       <updated>1786456628973</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="fix: evaluation timezone">
+      <option name="closed" value="true" />
+      <created>1786460747632</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1786460747632</updated>
+    </task>
+    <task id="LOCAL-00059" summary="fix: evaluation timezone">
+      <option name="closed" value="true" />
+      <created>1786460802846</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1786460802847</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -503,6 +504,7 @@
     <MESSAGE value="feat: add optional wait-time question to satisfaction survey" />
     <MESSAGE value="fix: remove the bread decoration in the review screen" />
     <MESSAGE value="feat: add 'como conheceu' field" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add 'como conheceu' field" />
+    <MESSAGE value="fix: evaluation timezone" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: evaluation timezone" />
   </component>
 </project>
