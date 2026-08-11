@@ -236,7 +236,7 @@
     <table>
       <thead>
       <tr>
-        <th>Data</th><th>Nome</th><th>Geral</th><th>Atendimento</th><th>Produtos</th><th>Ambiente</th><th>Tempo de espera</th><th>Comentário</th>
+        <th>Data</th><th>Nome</th><th>Geral</th><th>Atendimento</th><th>Produtos</th><th>Ambiente</th><th>Tempo de espera</th><th>Como conheceu</th><th>Comentário</th>
       </tr>
       </thead>
       <tbody id="tabelaAvaliacoes"></tbody>
@@ -446,6 +446,16 @@
     return labels[codigo] || '<span style="color:#C7B9A8">—</span>';
   }
 
+  function renderComoConheceu(codigo) {
+    const labels = {
+      INDICACAO: 'Indicação',
+      INSTAGRAM: 'Instagram',
+      GOOGLE: 'Google',
+      JA_SOU_CLIENTE: 'Já era cliente'
+    };
+    return labels[codigo] || '<span style="color:#C7B9A8">—</span>';
+  }
+
   async function carregarTabela(pagina = 0) {
     try {
       const dados = await fetchJSON(`/api/avaliacoes?page=${pagina}&size=10&sort=dataHora,desc`);
@@ -462,6 +472,7 @@
             <td>${renderEstrelas(a.notaProdutos)}</td>
             <td>${renderEstrelas(a.notaAmbiente)}</td>
             <td>${renderTempoEspera(a.tempoEspera)}</td>
+            <td>${renderComoConheceu(a.comoConheceu)}</td>
             <td class="comentario" title="${(a.comentario || '').replace(/"/g, '&quot;')}">${a.comentario || '—'}</td>
           </tr>
         `).join('');
