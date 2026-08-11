@@ -348,6 +348,15 @@
           <button type="button" data-value="MUITO_DEMORADO">Muito demorado</button>
         </div>
       </div>
+      <div class="category-block">
+        <span class="label">Como você conheceu a Padá Padoca?</span>
+        <div class="choice-group" data-group="comoConheceu">
+          <button type="button" data-value="INDICACAO">Indicação</button>
+          <button type="button" data-value="INSTAGRAM">Instagram</button>
+          <button type="button" data-value="GOOGLE">Google</button>
+          <button type="button" data-value="JA_SOU_CLIENTE">Já sou cliente</button>
+        </div>
+      </div>
     </div>
 
     <div class="field">
@@ -483,6 +492,7 @@
       notaProdutos: ratings.produtos || null,
       notaAmbiente: ratings.ambiente || null,
       tempoEspera: ratings.tempoEspera,
+      comoConheceu: ratings.comoConheceu,
       comentario: document.getElementById('comentario').value || null,
       nomeCliente: nomeInput.value.trim()
     };
