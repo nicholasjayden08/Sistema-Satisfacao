@@ -30,6 +30,8 @@ public class Avaliacao {
 
     private String tempoEspera;
 
+    private String comoConheceu;
+
     @Column(length = 1000)
     private String comentario;
 
@@ -87,6 +89,14 @@ public class Avaliacao {
 
     public void setTempoEspera(String tempoEspera) {
         this.tempoEspera = tempoEspera;
+    }
+
+    public String getComoConheceu() {
+        return comoConheceu;
+    }
+
+    public void setComoConheceu(String comoConheceu) {
+        this.comoConheceu = comoConheceu;
     }
 
     public String getComentario() {
