@@ -7,13 +7,14 @@ import java.time.LocalDateTime;
 public class AvaliacaoResponseDTO {
 
     private Long id;
+    private String nomeCliente;
     private Integer notaGeral;
     private Integer notaAtendimento;
     private Integer notaProdutos;
     private Integer notaAmbiente;
     private String tempoEspera;
+    private String comoConheceu;
     private String comentario;
-    private String nomeCliente;
     private LocalDateTime dataHora;
     private double media;
     private boolean recomendaGoogle;
@@ -21,13 +22,14 @@ public class AvaliacaoResponseDTO {
     public static AvaliacaoResponseDTO fromEntity(Avaliacao a) {
         AvaliacaoResponseDTO dto = new AvaliacaoResponseDTO();
         dto.id = a.getId();
+        dto.nomeCliente = a.getNomeCliente();
         dto.notaGeral = a.getNotaGeral();
         dto.notaAtendimento = a.getNotaAtendimento();
         dto.notaProdutos = a.getNotaProdutos();
         dto.notaAmbiente = a.getNotaAmbiente();
-        dto.comentario = a.getComentario();
-        dto.nomeCliente = a.getNomeCliente();
         dto.tempoEspera = a.getTempoEspera();
+        dto.comoConheceu = a.getComoConheceu();
+        dto.comentario = a.getComentario();
         dto.dataHora = a.getDataHora();
         dto.media = Math.round(a.calcularMedia() * 10) / 10.0;
         dto.recomendaGoogle = a.calcularMedia() >= 4.0;
@@ -56,6 +58,10 @@ public class AvaliacaoResponseDTO {
 
     public String getTempoEspera() {
         return tempoEspera;
+    }
+
+    public String getComoConheceu() {
+        return comoConheceu;
     }
 
     public String getComentario() {
