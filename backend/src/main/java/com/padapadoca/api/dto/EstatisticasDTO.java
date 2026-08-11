@@ -35,10 +35,6 @@ public class EstatisticasDTO {
         return mediaProdutos;
     }
 
-    public double getMediaAmbiente() {
-        return mediaAmbiente;
-    }
-
     public double getPercentualPositivas() {
         return percentualPositivas;
     }
