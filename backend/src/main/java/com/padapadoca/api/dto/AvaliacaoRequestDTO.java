@@ -26,6 +26,10 @@ public class AvaliacaoRequestDTO {
             message = "Tempo de espera inválido")
     private String tempoEspera;
 
+    @Pattern(regexp = "INDICACAO|INSTAGRAM|GOOGLE|JA_SOU_CLIENTE",
+            message = "Valor invalido para 'como conheceu'")
+    private String comoConheceu;
+
     @Size(max = 1000, message = "O comentário deve ter no máximo 1000 caracteres")
     private String comentario;
 
@@ -58,6 +62,7 @@ public class AvaliacaoRequestDTO {
 
     public Integer getNotaAmbiente() {
         return notaAmbiente;
+
     }
 
     public void setNotaAmbiente(Integer notaAmbiente) {
@@ -70,6 +75,14 @@ public class AvaliacaoRequestDTO {
 
     public void setTempoEspera(String tempoEspera) {
         this.tempoEspera = tempoEspera;
+    }
+
+    public String getComoConheceu() {
+        return comoConheceu;
+    }
+
+    public void setComoConheceu(String comoConheceu) {
+        this.comoConheceu = comoConheceu;
     }
 
     public String getComentario() {
