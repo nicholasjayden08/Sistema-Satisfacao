@@ -1,0 +1,14 @@
+# Build
+target/
+*.class
+
+# Banco de dados local (H2 legado)
+data/
+*.mv.db
+
+# IDE
+.idea/
+*.iml
+
+# SO
+.DS_Store
