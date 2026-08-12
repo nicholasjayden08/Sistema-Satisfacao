@@ -10,7 +10,7 @@ public class EstatisticasDTO {
     private double percentualPositivas; // % de avaliações com média >= 4
 
     public EstatisticasDTO(long totalAvaliacoes, double mediaGeral, double mediaAtendimento,
-                            double mediaProdutos, double mediaAmbiente, double percentualPositivas) {
+                           double mediaProdutos, double mediaAmbiente, double percentualPositivas) {
         this.totalAvaliacoes = totalAvaliacoes;
         this.mediaGeral = mediaGeral;
         this.mediaAtendimento = mediaAtendimento;
@@ -33,6 +33,10 @@ public class EstatisticasDTO {
 
     public double getMediaProdutos() {
         return mediaProdutos;
+    }
+
+    public double getMediaAmbiente() {
+        return mediaAmbiente;
     }
 
     public double getPercentualPositivas() {
