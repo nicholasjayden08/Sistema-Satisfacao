@@ -7,16 +7,21 @@ public class EstatisticasDTO {
     private double mediaAtendimento;
     private double mediaProdutos;
     private double mediaAmbiente;
-    private double percentualPositivas; // % de avaliações com média >= 4
+    private double percentualPositivas;
+    private String tempoEsperaMaisComum;
+    private String comoConheceuMaisComum;
 
     public EstatisticasDTO(long totalAvaliacoes, double mediaGeral, double mediaAtendimento,
-                           double mediaProdutos, double mediaAmbiente, double percentualPositivas) {
+                           double mediaProdutos, double mediaAmbiente, double percentualPositivas,
+                           String tempoEsperaMaisComum, String comoConheceuMaisComum) {
         this.totalAvaliacoes = totalAvaliacoes;
         this.mediaGeral = mediaGeral;
         this.mediaAtendimento = mediaAtendimento;
         this.mediaProdutos = mediaProdutos;
         this.mediaAmbiente = mediaAmbiente;
         this.percentualPositivas = percentualPositivas;
+        this.tempoEsperaMaisComum = tempoEsperaMaisComum;
+        this.comoConheceuMaisComum = comoConheceuMaisComum;
     }
 
     public long getTotalAvaliacoes() {
@@ -41,5 +46,13 @@ public class EstatisticasDTO {
 
     public double getPercentualPositivas() {
         return percentualPositivas;
+    }
+
+    public String getTempoEsperaMaisComum() {
+        return tempoEsperaMaisComum;
+    }
+
+    public String getComoConheceuMaisComum() {
+        return comoConheceuMaisComum;
     }
 }
