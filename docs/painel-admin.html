@@ -253,9 +253,27 @@
       <div class="card"><div class="label">Produtos</div><div class="value stars" id="statProdutos">–</div></div>
       <div class="card"><div class="label">Ambiente</div><div class="value stars" id="statAmbiente">–</div></div>
     </div>
+
     <div class="chart-box">
       <h3>Média por categoria</h3>
       <canvas id="chartCategorias"></canvas>
+    </div>
+
+    <div style="margin-top: 1.75rem;">
+      <table>
+        <thead>
+        <tr>
+          <th>Média de Tempo de Espera</th>
+          <th>Média de Como Conheceu</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td id="statTempoEspera">–</td>
+          <td id="statComoConheceu">–</td>
+        </tr>
+        </tbody>
+      </table>
     </div>
   </section>
 
@@ -350,6 +368,8 @@
       document.getElementById('statAtendimento').textContent = est.mediaAtendimento.toFixed(1);
       document.getElementById('statProdutos').textContent = est.mediaProdutos.toFixed(1);
       document.getElementById('statAmbiente').textContent = est.mediaAmbiente.toFixed(1);
+      document.getElementById('statTempoEspera').textContent = est.tempoEsperaMaisComum;
+      document.getElementById('statComoConheceu').textContent = est.comoConheceuMaisComum;
 
       if (catChart) catChart.destroy();
       catChart = new Chart(document.getElementById('chartCategorias'), {
