@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.util.List;
 
 @Service
 public class AvaliacaoService {
@@ -55,7 +56,13 @@ public class AvaliacaoService {
         long positivas = repository.countByNotaGeralGreaterThanEqualAndDataHoraBetween(4, inicio, fim);
         double percentualPositivas = total == 0 ? 0 : arredondar((positivas * 100.0) / total);
 
-        return new EstatisticasDTO(total, mediaGeral, mediaAtendimento, mediaProdutos, mediaAmbiente, percentualPositivas);
+        List<String> temposEspera = repository.tempoEsperaMaisComum(inicio, fim);
+        List<String> comoConheceu = repository.comoConheceuMaisComum(inicio, fim);
+
+        String tempoEsperaMaisComum = temposEspera.isEmpty() ? null : temposEspera.get(0);
+        String comoConheceuMaisComum = comoConheceu.isEmpty() ? null : comoConheceu.get(0);
+
+        return new EstatisticasDTO(total, mediaGeral, mediaAtendimento, mediaProdutos, mediaAmbiente, percentualPositivas, tempoEsperaMaisComum, comoConheceuMaisComum);
     }
 
     private double arredondar(Double valor) {
