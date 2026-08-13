@@ -31,4 +31,10 @@ public interface AvaliacaoRepository extends JpaRepository<Avaliacao, Long> {
     long countByDataHoraBetween(LocalDateTime inicio, LocalDateTime fim);
 
     long countByNotaGeralGreaterThanEqualAndDataHoraBetween(Integer nota, LocalDateTime inicio, LocalDateTime fim);
+
+    @Query("SELECT a.tempoEspera FROM Avaliacao a WHERE a.tempoEspera IS NOT NULL AND a.dataHora BETWEEN :inicio AND :fim GROUP BY a.tempoEspera ORDER BY COUNT(a.tempoEspera) DESC")
+    List<String> tempoEsperaMaisComum(LocalDateTime inicio, LocalDateTime fim);
+
+    @Query(" SELECT a.comoConheceu FROM Avaliacao a WHERE a.comoConheceu IS NOT NULL AND a.dataHora BETWEEN :inicio AND :fim GROUP BY a.comoConheceu ORDER BY COUNT(a.comoConheceu) DESC")
+    List<String> comoConheceuMaisComum(LocalDateTime inicio, LocalDateTime fim);
 }
