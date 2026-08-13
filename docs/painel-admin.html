@@ -42,9 +42,10 @@
       flex-shrink:0;
     }
     aside .brand{
-      font-family: 'Bodoni Moda', serif;
-      font-weight:600;
-      font-size:1.3rem;
+      display:block;
+      width:150px;
+      max-width:100%;
+      height:auto;
       margin:0 0 2rem;
       padding:0 0.5rem;
     }
@@ -165,8 +166,7 @@
       padding:2.5rem 2.25rem; width:100%; max-width:320px; text-align:center;
     }
     .login-box .brand{
-      font-family:'Bodoni Moda', serif; font-weight:600; font-size:1.4rem; color:var(--wine-700);
-      margin:0 0 1.5rem;
+      display:block; width:180px; max-width:60%; height:auto; margin:0 auto 1.5rem;
     }
     .login-box input{
       width:100%; padding:0.6rem 0.75rem; border:1px solid var(--border); border-radius:8px;
@@ -189,7 +189,7 @@
 
 <div id="loginOverlay">
   <div class="login-box">
-    <p class="brand">padá padoca</p>
+    <img class="brand" src="logo-pada-padoca-vinho.png" alt="Padá Padoca">
     <p class="login-error" id="loginError"></p>
     <form id="loginForm">
       <input id="loginUser" type="text" placeholder="Usuário" autocomplete="username" required />
@@ -200,7 +200,7 @@
 </div>
 
 <aside>
-  <p class="brand">padá padoca</p>
+  <img class="brand" src="logo-pada-padoca-creme.png" alt="Padá Padoca">
   <nav>
     <button data-view="dashboard" class="active">Dashboard</button>
     <button data-view="avaliacoes">Avaliações</button>
