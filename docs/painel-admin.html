@@ -10,9 +10,9 @@
   <link rel="icon" type="image/png" href="padapadoca.png">
   <style>
     :root{
-      --wine-900:#2E1214;
-      --wine-700:#4A2224;
-      --wine-500:#6B3A3D;
+      --wine-900:#1F0B05;
+      --wine-700:#36130A;
+      --wine-500:#5A2618;
       --cream-100:#FCF8F4;
       --cream-200:#F3E9DA;
       --gold:#C9A15B;
@@ -378,7 +378,7 @@
           labels: ['Atendimento', 'Produtos', 'Ambiente'],
           datasets: [{
             data: [est.mediaAtendimento, est.mediaProdutos, est.mediaAmbiente],
-            backgroundColor: '#4A2224',
+            backgroundColor: '#36130A',
             borderRadius: 6,
             maxBarThickness: 50
           }]
@@ -410,7 +410,7 @@
           labels: ['1 ★', '2 ★', '3 ★', '4 ★', '5 ★'],
           datasets: [{
             data: distribuicao,
-            backgroundColor: ['#B33F3F', '#C97A4A', '#D9AA5A', '#8A6E3C', '#4A2224']
+            backgroundColor: ['#B33F3F', '#C97A4A', '#D9AA5A', '#8A6E3C', '#36130A']
           }]
         },
         options: { plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 11 } } } } }
@@ -434,7 +434,7 @@
           labels: dias.map(d => d.split('-').reverse().slice(0, 2).join('/')),
           datasets: [{
             data: medias,
-            borderColor: '#4A2224',
+            borderColor: '#36130A',
             backgroundColor: 'rgba(74,34,36,0.08)',
             tension: 0.35,
             fill: true,
