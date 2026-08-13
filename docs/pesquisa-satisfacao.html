@@ -465,6 +465,9 @@
   // Troque pela URL da API quando publicada (ex: https://padapadoca-api.onrender.com)
   const API_URL = 'https://padapadoca-api.onrender.com/api/avaliacoes';
 
+  // Acorda o backend assim que o cliente abre o formulário (Render free tier "dorme" após inatividade)
+  fetch('https://padapadoca-api.onrender.com', { method: 'GET' }).catch(() => {});
+
   submitBtn.addEventListener('click', () => {
 
     const nome = nomeInput.value.trim();
@@ -499,7 +502,8 @@
     fetch(API_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
+      body: JSON.stringify(payload),
+      keepalive: true
     })
             .then(() => {
               mostrarObrigado();
